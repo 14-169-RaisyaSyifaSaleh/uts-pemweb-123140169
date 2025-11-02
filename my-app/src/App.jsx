@@ -6,7 +6,6 @@ import DataTable from "./components/DataTable";
 import { ImageGallery, FavoritesSection } from "./components/DetailCard";
 
 function App() {
-  // State management
   const [activeTab, setActiveTab] = useState("dog");
   const [dogBreeds, setDogBreeds] = useState([]);
   const [catBreeds, setCatBreeds] = useState([]);
@@ -16,7 +15,6 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Load favorites from localStorage on mount
   useEffect(() => {
     const savedFavorites = localStorage.getItem("animalFavorites");
     if (savedFavorites) {
@@ -29,12 +27,10 @@ function App() {
     }
   }, []);
 
-  // Save favorites to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("animalFavorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // Fetch dog breeds on mount
   useEffect(() => {
     const fetchDogBreeds = async () => {
       try {
@@ -52,7 +48,6 @@ function App() {
     fetchDogBreeds();
   }, []);
 
-  // Set cat breeds (mock data)
   useEffect(() => {
     const catBreedsList = [
       "persian",
@@ -71,7 +66,6 @@ function App() {
     setCatBreeds(catBreedsList);
   }, []);
 
-  // Fetch images and facts when tab or breed changes
   useEffect(() => {
     fetchImages();
   }, [activeTab, selectedBreed]);
@@ -80,12 +74,10 @@ function App() {
     fetchFacts();
   }, [activeTab]);
 
-  // Reset breed selection when switching tabs
   useEffect(() => {
     setSelectedBreed("");
   }, [activeTab]);
 
-  // Fetch images based on active tab and breed
   const fetchImages = async () => {
     setLoading(true);
     try {
@@ -115,7 +107,6 @@ function App() {
     }
   };
 
-  // ✅ Fixed: Fetch facts safely
   const fetchFacts = async () => {
     setLoading(true);
     try {
@@ -126,7 +117,6 @@ function App() {
           const response = await fetch("https://catfact.ninja/fact");
           const data = await response.json();
 
-          // Hanya masukkan fact yang valid
           if (data.fact && data.fact.trim() !== "") {
             factsArray.push({
               fact: data.fact,
@@ -169,7 +159,6 @@ function App() {
     }
   };
 
-  // Handle favorites
   const handleFavorite = (imageUrl) => {
     if (favorites.includes(imageUrl)) {
       setFavorites(favorites.filter((fav) => fav !== imageUrl));
