@@ -23,6 +23,8 @@ Langkah Instalasi
 
 4. Buka di browser
 
+   Struktur Kode 
+
 <img width="641" height="976" alt="image" src="https://github.com/user-attachments/assets/c58c58ca-398c-41fe-b5c0-a312256e2d83" />
 
 🌐 Live Demo
@@ -40,5 +42,10 @@ Screenshoot
 <img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/43d1a2ca-ed52-4e8e-93c5-6cdedbfa3a72" />
 
 <img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/c99f8f73-1da8-4b17-b81b-399e26ad813f" />
+
+<img width="1919" height="716" alt="image" src="https://github.com/user-attachments/assets/be23b70e-def6-46c6-80bf-899fa0fb88d4" />
+
+<img width="1919" height="934" alt="image" src="https://github.com/user-attachments/assets/c4cee84d-4bdc-4290-ac83-62e2ab5f72a8" />
+
 
 
